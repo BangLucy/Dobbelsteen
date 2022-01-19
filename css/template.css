@@ -8,6 +8,17 @@ html, body {
     height: 100%;
 }
 
+/* Tekst */
+.h1-groot {
+    font-size: 72px !important;
+    line-height: 76px !important;
+    font-weight: 800 !important;
+}
+/* Kleuren */
+.oranje {
+    color: rgb(255, 145, 0);
+}
+
 /* Navbar */
 .navbar-nav {
     justify-content: center;
