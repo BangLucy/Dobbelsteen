@@ -1,0 +1,31 @@
+:root {
+    --maincolor: #76C2AF;
+    --subcolor: #65A192;
+}
+/* Main content */
+html, body {
+    background-color: var(--maincolor);
+    height: 100%;
+}
+
+/* Navbar */
+.navbar-nav {
+    justify-content: center;
+}
+@media screen and (max-width: 992px) {
+    #logobanner {
+        display: none;
+    }
+}
+@media screen and (min-width: 992px) {
+    #homelink {
+        display: none;
+    }
+}
+#logobanner {
+    height: auto;
+    width: 20%;
+}
+.navbar {
+    background-color: var(--subcolor);
+}
