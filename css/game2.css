@@ -1,0 +1,107 @@
+:root {
+    --animation-duration: 1s;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+.game {
+    height: 400px;
+    width: 800px;
+    border: 1px solid black;
+    margin: auto;
+    background-image: url(../game2/images/cedebf2e3194ad72fe20551f88674a4b.jpg);
+    background-repeat: no-repeat;
+    position: relative;
+    top: 180px;
+}
+
+#man {
+    width: 30px;
+    height: 65px;
+    background-image: url(../game2/images/FkOVfLKCAG.png);
+    background-size: 30px 65px;
+    position: relative;
+    top: 239px;
+}
+.animation {    
+    animation: jumping 500ms;
+}
+
+#lava {
+    width: 30px;
+    height: 30px;
+    background-image: url(../game2/images/8d53a44e6e34cd63c97228c8c93b9795.png);
+    background-size: 30px 30px;
+    position: relative;
+    top: 235px;
+    left: 770px;
+    animation: lava var(--animation-duration) infinite linear;
+}
+
+@keyframes lava{
+    100%{left: 770px;}
+    100%{left: -8px;}
+}
+
+@keyframes jumping {
+    0%{top: 239px;}
+    30%{top: 199px;}
+    70%{top: 199px;}
+    100%{top: 239px;}
+}
+
+.start {
+    text-decoration: none;
+    font-family: Stencil Std, fantasy;
+    font-size: 50px;
+    color: black;
+}
+
+.start:hover {
+    color: crimson;
+}
+
+.title {
+    font-family: Stencil Std, fantasy;  
+}
+#gameo {
+    display: none;
+}
+
+#gamebox {
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+}
+.hidden {
+    display: none !important;
+}
+.visible {
+    display: block !important;
+}
+#sorrytekst {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .game {
+        display: none;
+    }
+    #gamebox {
+        display: none;
+    }
+    #sorrytekst {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -50px;
+        margin-left: -181px;
+        word-break: normal;
+    }
+}

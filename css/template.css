@@ -16,6 +16,11 @@ html, body {
     line-height: 76px !important;
     font-weight: 800 !important;
 }
+.h1-mid {
+    font-size: 54px !important;
+    line-height: 52px !important;
+    font-weight: 400 !important;
+}
 /* Kleuren */
 .oranje {
     color: var(--orange);

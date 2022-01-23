@@ -1,0 +1,19 @@
+<form name="myform">
+    <input type="number" name="na">
+    <div>groter dan....</div>
+    <input type="number" name="nb">
+</form>
+<button onclick="startme();">vergelijk</button>
+<div id="result"></div>
+
+<script>
+
+    function startme() {
+        document.getElementById('result').innerText = greater(document.forms.myform)
+    }
+
+    function greater(f) {
+        return (f.na.value > f.nb.value);
+    }
+
+</script>
