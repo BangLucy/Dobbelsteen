@@ -30,9 +30,9 @@ function checkDead() {
         if(lavaLeft<20 && lavaLeft>-9 && manTop>=230){
             lava.style.animation = "none";
             alert("Game Over, Minecraft noob ");
-            scorecounter=0;
+            scorecounter= 0;
             lava.style.animation = "lava var(--animation-duration) infinite linear";
-            startCounter()
+            scoreup()
         }
     }, 10);
 }
@@ -67,4 +67,6 @@ function startCounter() {
         }, updateScoreTime);
     }
     scoreup()
+
+    
 }

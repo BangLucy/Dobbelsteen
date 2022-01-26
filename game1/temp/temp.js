@@ -26,13 +26,13 @@ function calculateMousePos(evt) {
     };
 }
 function handleMouseClick(evt) {
-    if(showingWinScreen) {
+    if (showingWinScreen) {
         player1Score = 0;
         player2Score = 0;
         showingWinScreen = false
     }
 }
-// Window events wanneer je inlaad
+// Events wanneer je start
 function startGameScored() {
     canvas = document.getElementById('gameCanvas');
     canvas.style.display = "block";
@@ -40,7 +40,7 @@ function startGameScored() {
     var framesPerSecond = 45; // 45 is het norm, 120 is snel en 30 langzaam. [DIT TAST GAMESPEED AAN]
     setInterval(function() {
         moveEverythingScored();
-        drawEverything();
+        drawEverythingScored();
     }, 1000 / framesPerSecond); // 1000 ms = 1 second. 1000/FPS geeft je een nummer dat precies zoveel keer past in 1000. Zo krijg je de refresh rate
     canvas.addEventListener('mousedown', handleMouseClick)
 
@@ -57,7 +57,7 @@ function startGameInf() {
     var framesPerSecond = 45; // 45 is het norm, 120 is snel en 30 langzaam. [DIT TAST GAMESPEED AAN]
     setInterval(function() {
         moveEverythingInf();
-        drawEverything();
+        drawEverythingInf();
     }, 1000 / framesPerSecond); // 1000 ms = 1 second. 1000/FPS geeft je een nummer dat precies zoveel keer past in 1000. Zo krijg je de refresh rate
 
     canvas.addEventListener('mousedown', handleMouseClick)
@@ -80,8 +80,6 @@ function ballResetScored() {
 function ballResetInf() {
     if (player1Score >= INF_SCORE ||
         player2Score >= WINNING_SCORE) {
-        player1Score = 0;
-        player2Score = 0;
         showingWinScreen = true;
     }
     ballSpeedX = -ballSpeedX;
@@ -178,11 +176,31 @@ function moveEverythingInf() {
 }
 function drawNet() {
     for(var i=0;i<canvas.height; i+=40) {
-        colorRect(canvas.width/2-1, i, 2, 20, 'black');
+        colorRect(canvas.width/2-1, i, 2, 20, 'white');
     }
 }
 
-function drawEverything() {
+function drawEverythingInf() {
+    // Next line blanks out the screen with black
+    colorRect(0, 0, canvas.width, canvas.height, 'black');
+    if (showingWinScreen) { 
+        canvasContext.fillStyle = 'white'; 
+        canvasContext.fillText(`Je score was ${player1Score}`, 350, 150)
+        canvasContext.fillText("Klik om door te gaan.", 350, 200)
+        return; 
+    } 
+    drawNet();
+    // Linker speler paddle
+    colorRect(2, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'white');
+    // Rechter speler paddle
+    colorRect(canvas.width - PADDLE_THICKNESS, paddle2Y, 10, PADDLE_HEIGHT, 'white');
+    // Ball
+    colorCircle(ballX, ballY, 10, 'white');
+    // Scores!
+    canvasContext.fillText(player1Score, 100, 100);
+    canvasContext.fillText(player2Score, canvas.width - 100, 100);
+}
+function drawEverythingScored() {
     // Next line blanks out the screen with black
     colorRect(0, 0, canvas.width, canvas.height, 'black');
     if (showingWinScreen) { 
@@ -196,6 +214,7 @@ function drawEverything() {
         canvasContext.fillText("Klik om door te gaan.", 350, 200)
         return; 
     } 
+    drawNet();
     // Linker speler paddle
     colorRect(2, paddle1Y, PADDLE_THICKNESS, PADDLE_HEIGHT, 'white');
     // Rechter speler paddle
@@ -215,4 +234,18 @@ function colorCircle(centerX, centerY, radius, drawColor) {
 function colorRect(leftX, topY, width, height, drawColor) {
     canvasContext.fillStyle = drawColor;
     canvasContext.fillRect(leftX, topY, width, height);
+}
+function HighscoreSystem(highscoreNum) {
+    if(HighestScore === null || NaN) {
+        HighestScore = highscoreNum
+    } else {
+        if (highscoreNum > HighestScore) {
+            HighestScore = highscoreNum;
+            canvasContext.fillText("Je score was niet het hoogste!", 350, 175);
+            canvasContext.fillText(`Hoogste score momenteel is: ${HighestScore}`, 350, 200);
+        } else {
+            canvasContext.fillText("Je score was niet het hoogste!", 350, 175);
+            canvasContext.fillText(`Hoogste score momenteel is: ${HighestScore}`, 350, 200);
+        }
+    }
 }
