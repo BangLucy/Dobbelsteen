@@ -61,7 +61,7 @@ function startCounter() {
     }
     function scoreup() {
         setTimeout(() => {
-            scorecounter = scorecounter + 10
+            scorecounter = scorecounter + 1
             scoreup()
             document.getElementById("score").innerHTML=`Score: ${scorecounter}`;
         }, updateScoreTime);

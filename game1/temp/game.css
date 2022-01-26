@@ -1,0 +1,6 @@
+#gameCanvas {
+    display: none;
+}
+.visible {
+    display: block;
+}

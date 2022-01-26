@@ -9,7 +9,11 @@ html, body {
     background-color: var(--maincolor);
     height: 100%;
 }
-
+/* Fancy Bullshit */
+#logobanner {
+    cursor: pointer;
+}
+ 
 /* Tekst */
 .h1-groot {
     font-size: 72px !important;
