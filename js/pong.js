@@ -82,8 +82,6 @@ function startGameInf() {
 function ballResetScored() {
     if (player1Score >= WINNING_SCORE ||
         player2Score >= WINNING_SCORE) {
-        StartInf.style.display = "block";
-        StartScored.style.display = "block";
         showingWinScreen = true;
     }
     ballSpeedX = -ballSpeedX;

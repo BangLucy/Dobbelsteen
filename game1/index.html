@@ -9,6 +9,7 @@
         <link href="../css/template.css" rel="stylesheet">
         <link href="../css/game1.css" rel="stylesheet">
         <script src="../js/template.js"></script>
+        <script src="../js/pong.js"></script>
         <title>De Blije Dobbelsteen</title>
     </head>
     <body>
@@ -40,7 +41,12 @@
             </div>
         </nav>
         <main>
-            
+          <canvas id="gameCanvas" width="800" height="600"></canvas>
+
+          <div>
+              <a class="button" onclick="startGameInf()" id="inf">To infinity and beyond!</a>
+              <a class="button" onclick="startGameScored()" id="scored">Start Scored</a>
+          </div>
         </main>
         <div class="container fixed-bottom">
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
