@@ -60,6 +60,8 @@ function startGameInf() {
     let StartInf = document.getElementById('inf')
     let StartScored = document.getElementById('scored')
     canvas = document.getElementById('gameCanvas');
+    var hs = getCookie("HighestScore")
+    HighestScore = hs;
     canvas.style.display = "block";
     StartInf.style.visibility = "hidden";
     StartScored.style.visibility = "hidden";

@@ -60,6 +60,8 @@ function startGameInf() {
     let StartInf = document.getElementById('inf')
     let StartScored = document.getElementById('scored')
     canvas = document.getElementById('gameCanvas');
+    var hs = getCookie("HighestScore")
+    HighestScore = hs;
     canvas.style.display = "block";
     StartInf.style.visibility = "hidden";
     StartScored.style.visibility = "hidden";
@@ -82,8 +84,6 @@ function startGameInf() {
 function ballResetScored() {
     if (player1Score >= WINNING_SCORE ||
         player2Score >= WINNING_SCORE) {
-        StartInf.style.display = "block";
-        StartScored.style.display = "block";
         showingWinScreen = true;
     }
     ballSpeedX = -ballSpeedX;
