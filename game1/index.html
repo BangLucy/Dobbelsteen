@@ -43,10 +43,11 @@
         <main>
           <canvas id="gameCanvas" width="800" height="600"></canvas>
 
-          <div>
-              <a class="button" onclick="startGameInf()" id="inf">To infinity and beyond!</a>
-              <a class="button" onclick="startGameScored()" id="scored">Start Scored</a>
+          <div id="startbuttondiv">
+              <div class="pixel" onclick="startGameInf()"><p>To infinity and beyond</p></div>
+              <div class="pixel" onclick="startGameScored()"><p>Start Score</p></div>
           </div>
+          <span id="sorrytekst">Sorry! Dit spelletje werkt niet op mobiele telefoons!</span>
         </main>
         <div class="container fixed-bottom">
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">

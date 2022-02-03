@@ -36,12 +36,10 @@ function handleMouseClick(evt) {
 }
 // Events wanneer je start
 function startGameScored() {
-    let StartInf = document.getElementById('inf')
-    let StartScored = document.getElementById('scored')
+    let startbuttons = document.getElementById('startbuttondiv')
     canvas = document.getElementById('gameCanvas');
     canvas.style.display = "block";
-    StartInf.style.visibility = "hidden";
-    StartScored.style.visibility = "hidden";
+    startbuttons.style.visibility = "hidden";
     canvasContext = canvas.getContext('2d');
     var framesPerSecond = 45; // 45 is het norm, 120 is snel en 30 langzaam. [DIT TAST GAMESPEED AAN]
     setInterval(function() {
@@ -57,14 +55,12 @@ function startGameScored() {
         });
 };
 function startGameInf() {
-    let StartInf = document.getElementById('inf')
-    let StartScored = document.getElementById('scored')
+    let startbuttons = document.getElementById('startbuttondiv')
     canvas = document.getElementById('gameCanvas');
     var hs = getCookie("HighestScore")
     HighestScore = hs;
     canvas.style.display = "block";
-    StartInf.style.visibility = "hidden";
-    StartScored.style.visibility = "hidden";
+    startbuttons.style.visibility = "hidden";
     canvasContext = canvas.getContext('2d');
     var framesPerSecond = 45; // 45 is het norm, 120 is snel en 30 langzaam. [DIT TAST GAMESPEED AAN]
     checkForHighscoreCookie();
