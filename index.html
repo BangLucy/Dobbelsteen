@@ -9,6 +9,7 @@
         <link href="./css/template.css" rel="stylesheet">
         <link href="./css/main.css" rel="stylesheet">
         <script src="./js/template.js"></script>
+        <script src="./js/main.js"></script>
         <title>De Blije Dobbelsteen</title>
     </head>
     <body>
@@ -41,18 +42,19 @@
         </nav>
         <main>
             <h1 class="h1-groot dbb oranje text-center glow">De Blije Dobbelsteen</h1>
-            <div id="overonsblok">
+            <div class="overonsblok text-center">
                 <h1 class="h1-mid">
                   Waar Nederland bij elkaar komt om blij te zijn.
                 </h1>
             </div>
-            <div id="homegames">
-              <div>
-                <img src="./img/mcrun.png">
+            <div class="homegames">
+              <div class="homegamesbutton" onclick="gamebuttonmc()">
+                <img src="./img/mcrun.png" href="./game2/index.html" class="homegamesimgmc" height="232">
                 <h1>Minecraft run</h1>
               </div>
-              <div>
-                <img src="./img/pong.png">
+              <div class="homegamesbutton" onclick="gamebuttonpong()">
+                <img src="./img/pong.png" class="homegamesimgpong" height="232">
+                <h1>pong</h1>
               </div>
             </div>
         </main>

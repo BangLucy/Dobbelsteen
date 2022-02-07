@@ -1,0 +1,88 @@
+#contact-ons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 6px;
+    position: relative;
+}
+
+fieldset {
+    font-size: 1.5em;
+    border: 2px solid #65a192;
+    text-align: center;
+    border-radius: 5px;
+    
+}
+
+input[type=text] {
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #65a192;
+    border-radius: 3px;
+    padding: 4px;
+    color: white;
+}
+
+input[type=submit] {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 1.5rem;
+    transition: linear 0.2s;
+    border: 2px solid #65a192;
+    border-radius: 3px;
+    color: white;
+    margin-top: 16px;
+    padding: 12px 41%;
+}
+
+input[type=submit]:hover {
+    border: 2px solid #65a192;
+}
+
+textarea {
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #65a192;
+    border-radius: 5px;
+    color: white;
+    width: 400px;
+    height: 150px;
+    padding: 15px;
+    resize: none;
+}
+
+select {
+    border: 2px solid #65a192;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.textbox1 {
+    width: 192px;
+    float: left;
+    position: relative;
+    top: 60px;
+    background-color: #65a192;
+    min-height: calc(60vh);
+}
+
+.textbox2 {
+    width: 192px;
+    float: right;
+    position: relative;
+    top: 60px;
+    background-color: #65a192;
+    min-height: calc(60vh);
+}
+
+@media screen and (max-width: 990px) {
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contact-ons {
+        top: 60px;
+    }
+
+    body {
+        min-height: calc(152vh) 
+    }
+    
+}
