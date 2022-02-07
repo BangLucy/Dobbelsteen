@@ -19,7 +19,7 @@ input[type=text] {
     border: 2px solid #65a192;
     border-radius: 3px;
     padding: 4px;
-    color: white;
+    color: black;
 }
 
 input[type=submit] {
@@ -28,7 +28,7 @@ input[type=submit] {
     transition: linear 0.2s;
     border: 2px solid #65a192;
     border-radius: 3px;
-    color: white;
+    color: black;
     margin-top: 16px;
     padding: 12px 40%;
 }
@@ -41,7 +41,7 @@ textarea {
     background-color: rgba(0, 0, 0, 0);
     border: 2px solid #65a192;
     border-radius: 5px;
-    color: white;
+    color: black;
     width: 400px;
     height: 150px;
     padding: 15px;

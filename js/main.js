@@ -1,9 +1,7 @@
-function gamebuttonmc()
-{
+function gamebuttonmc() {
     location.href = "./game2/"
 }
 
-function gamebuttonpong()
-{
+function gamebuttonpong() {
     location.href = "./game1/"
 }
