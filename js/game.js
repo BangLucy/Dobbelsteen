@@ -3,7 +3,7 @@ var lava = document.getElementById("lava");
 var duration = 0
 var scorecounter = 0
 var Highscore = 0
-var HighestScore = null
+var HighestScoreMCRun = null
 
 function jump(){
     if(man.classList == "animation"){return}
@@ -35,7 +35,7 @@ function checkDead() {
             alert("Game Over, Minecraft noob.");
             checkForHighscoreCookie();
             HighscoreSystem(scorecounter);
-            alert(`Highscore: ${HighestScore}`)
+            alert(`Highscore: ${HighestScoreMCRun}`)
             scorecounter= 0;
             lava.style.animation = "lava var(--animation-duration) infinite linear";
             scoreup()
@@ -100,35 +100,35 @@ function setCookie(cname, cvalue, exdays) {
     return "";
 }
 function checkForHighscoreCookie() {
-    let value = getCookie("HighestScore")
+    let value = getCookie("HighestScoreMCRun")
     if(value == NaN) {
-        setCookie("HighestScore", 0, 365)
+        setCookie("HighestScoreMCRun", 0, 365)
     } else {
-        HighestScore = value
+        HighestScoreMCRun = value
         console.log("Highscore already set!" + value)
         return 200
     }
 }
 window.onload = function () {
-    let value = getCookie("HighestScore")
+    let value = getCookie("HighestScoreMCRun")
     if(value == NaN) {
-        setCookie("HighestScore", 0, 365)
+        setCookie("HighestScoreMCRun", 0, 365)
     } else {
-        HighestScore = value
+        HighestScoreMCRun = value
         console.log("Highscore already set!" + value)
         return 100
     }
 }
 function HighscoreSystem(highscoreNum) {
-    if(HighestScore === null || NaN) {
-        HighestScore = highscoreNum
+    if(HighestScoreMCRun === null || NaN) {
+        HighestScoreMCRun = highscoreNum
     } else {
-        if (highscoreNum > HighestScore) {
-            HighestScore = highscoreNum;
-            setCookie("HighestScore", HighestScore, 365)
+        if (highscoreNum > HighestScoreMCRun) {
+            HighestScoreMCRun = highscoreNum;
+            setCookie("HighestScoreMCRun", HighestScoreMCRun, 365)
         } else {
             // canvasContext.fillText("Je score was niet het hoogste!", 350, 175);
-            // canvasContext.fillText(`Hoogste score momenteel is: ${HighestScore}`, 350, 200);
+            // canvasContext.fillText(`Hoogste score momenteel is: ${HighestScoreMCRun}`, 350, 200);
             // TODO ^^ ^w^
             return 500
         }
